@@ -17,12 +17,7 @@
 
 #include "fdlibm.h"
 
-#ifdef __STDC__
 	double cosh(double x)		/* wrapper cosh */
-#else
-	double cosh(x)			/* wrapper cosh */
-	double x;
-#endif
 {
 #ifdef _IEEE_LIBM
 	return __ieee754_cosh(x);

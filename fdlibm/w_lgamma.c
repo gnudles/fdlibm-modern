@@ -22,12 +22,7 @@
 
 extern int signgam;
 
-#ifdef __STDC__
 	double lgamma(double x)
-#else
-	double lgamma(x)
-	double x;
-#endif
 {
 #ifdef _IEEE_LIBM
 	return __ieee754_lgamma_r(x,&signgam);
