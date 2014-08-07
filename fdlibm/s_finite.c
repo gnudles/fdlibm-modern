@@ -6,7 +6,7 @@
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -20,7 +20,7 @@
 
 	int finite(double x)
 {
-	int hx; 
+	int hx;
 	hx = __HI(x);
 	return  (unsigned)((hx&0x7fffffff)-0x7ff00000)>>31;
 }

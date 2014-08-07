@@ -1,45 +1,45 @@
 #
-#  @(#)Makefile 1.4 95/01/18 
-# 
+#  @(#)Makefile 1.4 95/01/18
+#
 #  ====================================================
 #  Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
-# 
+#
 #  Developed at SunSoft, a Sun Microsystems, Inc. business.
 #  Permission to use, copy, modify, and distribute this
-#  software is freely granted, provided that this notice 
+#  software is freely granted, provided that this notice
 #  is preserved.
 #  ====================================================
-# 
-# 
+#
+#
 
 #
 # There are two options in making libm at fdlibm compile time:
 # 	_IEEE_LIBM 	--- IEEE libm; smaller, and somewhat faster
-#	_MULTI_LIBM	--- Support multi-standard at runtime by 
-#			    imposing wrapper functions defined in 
+#	_MULTI_LIBM	--- Support multi-standard at runtime by
+#			    imposing wrapper functions defined in
 #			    fdlibm.h:
 #				_IEEE_MODE 	-- IEEE
 #				_XOPEN_MODE 	-- X/OPEN
 #				_POSIX_MODE 	-- POSIX/ANSI
 #				_SVID3_MODE 	-- SVID
 #
-# Here is how to set up CFLAGS to create the desired libm at 
+# Here is how to set up CFLAGS to create the desired libm at
 # compile time:
 #
 # 	CFLAGS = -D_IEEE_LIBM		... IEEE libm (recommended)
 #	CFLAGS = -D_SVID3_MODE	... Multi-standard supported
-#					    libm with SVID as the 
+#					    libm with SVID as the
 #					    default standard
 #	CFLAGS = -D_XOPEN_MODE	... Multi-standard supported
-#					    libm with XOPEN as the 
+#					    libm with XOPEN as the
 #					    default standard
 #	CFLAGS = -D_POSIX_MODE	... Multi-standard supported
-#					    libm with POSIX as the 
+#					    libm with POSIX as the
 #					    default standard
 #	CFLAGS = 			... Multi-standard supported
-#					    libm with IEEE as the 
+#					    libm with IEEE as the
 #					    default standard
-# 
+#
 # NOTE: if scalb's second arguement is an int, then one must
 # define _SCALB_INT in CFLAGS. The default prototype of scalb
 # is double scalb(double, double)
@@ -49,7 +49,7 @@
 #
 # Default IEEE libm
 #
-CFLAGS = -D_IEEE_LIBM 
+CFLAGS = -D_IEEE_LIBM
 
 CC = cc
 
@@ -98,13 +98,13 @@ obj = 	k_standard.o k_rem_pio2.o \
 	s_rint.o s_scalbn.o s_signgam.o s_significand.o s_sin.o \
 	s_tan.o s_tanh.o
 
-all: libm.a 
+all: libm.a
 
-libm.a : $(obj) 
+libm.a : $(obj)
 	ar cru libm.a $(obj)
 	ranlib libm.a
 
 source: $(src) README
 
-clean: 
+clean:
 	/bin/rm -f $(obj) a.out libm.a

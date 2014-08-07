@@ -6,11 +6,11 @@
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
-/* 
+/*
  * wrapper atanh(x)
  */
 
@@ -29,7 +29,7 @@
 	if(y>=1.0) {
 	    if(y>1.0)
 	        return __kernel_standard(x,x,30); /* atanh(|x|>1) */
-	    else 
+	    else
 	        return __kernel_standard(x,x,31); /* atanh(|x|==1) */
 	} else
 	    return z;

@@ -6,7 +6,7 @@
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -23,7 +23,7 @@
 	int hx,lx;
 	hx = (__HI(x)&0x7fffffff);
 	lx = __LO(x);
-	hx |= (unsigned)(lx|(-lx))>>31;	
+	hx |= (unsigned)(lx|(-lx))>>31;
 	hx = 0x7ff00000 - hx;
 	return ((unsigned)(hx))>>31;
 }

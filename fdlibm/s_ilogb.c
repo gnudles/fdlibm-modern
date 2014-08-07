@@ -6,7 +6,7 @@
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -26,7 +26,7 @@
 	hx  = (__HI(x))&0x7fffffff;	/* high word of x */
 	if(hx<0x00100000) {
 	    lx = __LO(x);
-	    if((hx|lx)==0) 
+	    if((hx|lx)==0)
 		return 0x80000001;	/* ilogb(0) = 0x80000001 */
 	    else			/* subnormal x */
 		if(hx==0) {

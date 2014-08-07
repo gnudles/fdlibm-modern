@@ -6,7 +6,7 @@
  *
  * Developed at SunSoft, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -28,7 +28,7 @@
 	if(_LIB_VERSION == _IEEE_ || isnan(x) || x > 0.0) return z;
 	if(x==0.0)
 	    return __kernel_standard(x,x,16); /* log(0) */
-	else 
+	else
 	    return __kernel_standard(x,x,17); /* log(x<0) */
 #endif
 }
